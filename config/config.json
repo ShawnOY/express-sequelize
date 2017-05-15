@@ -1,0 +1,17 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./express-sequelize.development.sqlite"
+  },
+  "test": {
+    "dialect": "sqlite",
+    "storage": "memory"
+  },
+  "production": {
+    "username": null,
+    "password": null,
+    "database": null,
+    "host": null,
+    "dialect": "postgresql"
+  }
+}
