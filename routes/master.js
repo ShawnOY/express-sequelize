@@ -6,12 +6,10 @@ const models = require('../models')
 
 router.route('/')
   .get((request, response) => {
-    models.Master.findAll({
-      include: [models.Pet]
-    })
-    .then(masters => {
-      response.json(masters)
-    })
+    models.Master.findAll()
+      .then(masters => {
+        response.json(masters)
+      })
   })
 
 router.route('/create')
