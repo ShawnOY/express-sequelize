@@ -1,0 +1,7 @@
+extends ../site/layout.pug
+
+block content
+  p= `Name: ${master.name}`
+  p Pets
+  
+  p: a(href= `./${master.id}/pet/create`) New Pet

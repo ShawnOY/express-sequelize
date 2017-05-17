@@ -1,0 +1,8 @@
+extends ../site/layout.pug
+
+block content
+  h1 Master List
+  ul
+    each master in masters
+      li: a(href=`/master/${master.id}`)= master.name
+  a(href='/master/create') New
