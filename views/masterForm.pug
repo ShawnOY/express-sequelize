@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  form(action='/master' method='POST')
+    div Master Name: 
+      input(type='text' name='masterName')
+    div Pet Name:
+      input(type='text' name='petName')
+    div
+      input(type='submit')
