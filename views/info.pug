@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= 'Master: ' + master.name
+  h2 Pet List
+  ul
+    each pet in master.Pets
+      li= pet.name

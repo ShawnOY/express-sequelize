@@ -32,4 +32,16 @@ router.route('/master')
   })
 })
 
+router.get('/master/:masterId', (request, response) => {
+  models.Master.findOne({
+    where: {
+      id: request.params.masterId
+    },
+    include: [models.Pet]
+  })
+  .then(master => {
+    response.render('info', {master: master})
+  })
+})
+
 module.exports = router
