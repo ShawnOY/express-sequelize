@@ -6,6 +6,7 @@ block content
     a(href='/master') New Master
   ul
     each master in masters
-      li= master.name
+      li 
+        a(href='/master/' + master.id)= master.name
     else
       li No Master
