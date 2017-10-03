@@ -1,5 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Master List
+  p
+    a(href='/master') New Master
+  ul
+    each master in masters
+      li 
+        a(href='/master/' + master.id)= master.name
+    else
+      li No Master
