@@ -8,10 +8,10 @@
     "storage": "memory"
   },
   "production": {
-    "username": null,
+    "username": "root",
     "password": null,
-    "database": null,
-    "host": null,
-    "dialect": "postgresql"
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }

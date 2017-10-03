@@ -1,22 +1,14 @@
 'use strict'
 
-module.exports = function(sequelize, DataTypes) {
-  var Pet = sequelize.define('Pet', {
-    name: DataTypes.STRING,
+module.exports = (sequelize, DataTypes) => {
+  const Pet = sequelize.define('Pet', {
+    name: DataTypes.STRING(20),
     MasterId: DataTypes.INTEGER
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        Pet.belongsTo(models.Master, {
-          onUpdate: 'CASCADE',
-          onDelete: 'CASCADE',
-          foreignKey: {
-            allowNull: false
-          }
-        })
-      }
-    }
   })
+
+  Pet.associate = models => {
+    Pet.belongsTo(models.Master)
+  }
+
   return Pet
-};
+}
