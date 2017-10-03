@@ -1,8 +1,0 @@
-extends ../site/layout.pug
-
-block content
-  p= `Name: ${master.name}`
-  p Pets
-  each pet in master.Pets
-    li= pet.name  
-  p: a(href= `./pet/create`) New Pet

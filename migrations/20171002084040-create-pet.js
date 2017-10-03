@@ -1,7 +1,6 @@
-'use strict'
-
+'use strict';
 module.exports = {
-  up: function(queryInterface, Sequelize) {
+  up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Pets', {
       id: {
         allowNull: false,
@@ -10,14 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(20)
       },
       MasterId: {
-        type: Sequelize.INTEGER,
-        references: {model: 'Masters', key: 'id'},
-        onUpdate: 'CASCADE',
-        onDelete: 'CASCADE',
-        allowNull: false
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,
@@ -27,9 +22,9 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       }
-    })
+    });
   },
-  down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('Pets')
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('Pets');
   }
-}
+};

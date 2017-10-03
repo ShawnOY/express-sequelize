@@ -1,15 +1,13 @@
-'use strict'
+'use strict';
 
-module.exports = function(sequelize, DataTypes) {
-  var Master = sequelize.define('Master', {
-    name: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-        Master.hasMany(models.Pet)
-      }
-    }
+module.exports = (sequelize, DataTypes) => {
+  const Master = sequelize.define('Master', {
+    name: DataTypes.STRING(20)
   })
-  return Master
+
+  Master.associate = models => {
+    Master.hasMany(models.Pet)
+  }
+
+  return Master;
 }
